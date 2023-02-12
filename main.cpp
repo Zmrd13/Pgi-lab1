@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include "BmpHandler.h"
 using namespace std;
 bool endsWith(string target, string ending) {
   cout << "\n" << target << " " << ending;
@@ -27,11 +28,17 @@ bool endsWith(string target, string ending) {
 }
 
 int main(int argc, char *argv[]) {
+  BMP bmp1("catSample.bmp");
+    bmp1.grayscale();
+    bmp1.write("result.bmp");
+
   if (argc <= 1) {
     cerr << "No input file \n";
   } else if (endsWith(string(argv[1]), ".bmp")) {
-    cout << "Correct";
+    
+   
   } else {
     cout << argv[1] << "\n";
   }
+
 }
